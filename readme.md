@@ -6,9 +6,9 @@ Welcome to my class submissions portfolio. Below you'll find links to each assig
 
 | Assignment | Description | Due Date | Status |
 |-----------|-------------|----------|--------|
-| [Assignment 1](./assignment-1/) | [Brief description of what it is] | Jan 15 | ✅ Complete |
-| [Assignment 2](./assignment-2/) | [Brief description of what it is] | Jan 22 | ✅ Complete |
-| [Assignment 3](./assignment-3/) | [Brief description of what it is] | Jan 29 | 🔄 In Progress |
+| [Assignment 1](./homework1/) | First Edition of Hospital Patient Info Form | Feb 27 | ✅ Complete |
+| [Assignment 2](./homework2/) | Second Edition of Hospital Patient Info Form | Mar 27 | ✅ Complete |
+| [Assignment 3](./homework3/) | Third Edition of Hospital Patient Info Form | Apr 17 | ✅ Complete |
 
 ---
 
@@ -24,4 +24,4 @@ This GitHub Pages site contains all my homework submissions for [Course Name/Num
 
 ---
 
-*Last updated: [Date]*
+*Last updated: 28 Apr 2026*
