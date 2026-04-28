@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Thank You - Houston Health Center</title>
+    <link rel="stylesheet" href="hospital-form.css">
+    <style>
+        .thank-you-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 80vh;
+        }
+        .thank-you-message {
+            background: #222;
+            color: #fff;
+            padding: 40px 32px;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+            text-align: center;
+            font-size: 1.5rem;
+            margin-bottom: 24px;
+            width: 60%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1 id="h1">Houston Health Center</h1>
+        <p>Welcome to the Houston Health Center!</p>
+        <p class="date-line">Date: <span id="current_date"></span></p>
+        <script>
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            const date = new Date();
+            let formatted = date.toLocaleDateString('en-US', options).replace(/, (\d{1,2})/, ' $1');
+            document.getElementById('current_date').textContent = formatted;
+        </script>
+    </div>
+    <div class="thank-you-container">
+        <div class="thank-you-message">
+            <h1>Thank You!</h1>
+            <p>Your form has been successfully submitted.<br>
+            We appreciate you choosing Houston Health Center.<br>
+            Our team will review your information and contact you soon.</p>
+        </div>
+        <div id="footer">
+            <p>Thank you for choosing the Houston Health Center. We look forward to assisting you with your healthcare needs!</p>
+            <p>Contact us at (555) 123-4567 or visit our website at www.houstonhealthcenter.com</p>
+            <a href="https://www.instagram.com/" target="_blank" style="margin: 0 10px;">Instagram</a>
+            <a href="https://www.facebook.com/" target="_blank" style="margin: 0 10px;">Facebook</a>
+            <a href="https://x.com/" target="_blank" style="margin: 0 10px;">X</a>
+            <br><br>
+            <a href="index.html" style="color:#b30000; text-decoration:underline;">Return to Home</a>
+        </div>
+    </div>
+</body>
+</html>
