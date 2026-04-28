@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Homework 2: Form Additions</title>
+        <link rel="stylesheet" href="hospital-form.css">
+    </head>
+    <body>
+        <!--Page Header-->
+        <div id="header">
+            <h1 id="h1">Houston Health Center</h1>
+            <p>Welcome to the Houston Health Center!</p>
+            <p class="date-line">Date: <span id="current_date"></span></p>
+            <script>
+                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                const date = new Date();
+                let formatted = date.toLocaleDateString('en-US', options).replace(/, (\d{1,2})/, ' $1');
+                document.getElementById('current_date').textContent = formatted;
+            </script>
+        </div>
+
+        <div id="patient_info_header">
+            <h2>Patient Information</h2>
+            <p> Please fill out the following form to help us assist you better!</p>
+        </div>
+        <br>
+        <br>
+
+            <form action="closingpage.html">
+
+                <table class="form-table" id="patient_info">
+                    <!-- Section 1: Personal Information -->
+                    <tr>
+                        <td colspan="2" style="text-align:center;">
+                            <h3>Personal Information</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="first_name">First Name:</label>
+                            <input type="text" id="first_name" name="first_name" placeholder="First Name" required>
+                            <label for="middle_initial">M.I.:</label>
+                            <input type="text" id="middle_initial" name="middle_initial" placeholder="M.I." maxlength="1" style="width:40px;">
+                            <label for="last_name">Last Name:</label>
+                            <input type="text" id="last_name" name="last_name" placeholder="Last Name" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="dob">Date of Birth:</label>
+                            <input type="text" id="dob" name="dob" placeholder="Date of Birth (MM/DD/YYYY)" required
+                                maxlength="10" pattern="\d{2}/\d{2}/\d{4}" title="Please enter a date in the format MM/DD/YYYY">
+                            <label for="ssn">SSN:</label>
+                            <input type="text" id="ssn" name="ssn" placeholder="SSN (XXX-XX-XXXX)" required
+                             maxlength="11" pattern="\d{3}-\d{2}-\d{4}" title="Please enter a Social Security Number in the format XXX-XX-XXXX">
+                            <label for="phone">Phone:</label>
+                            <input type="text" id="phone" name="phone" placeholder="Phone Number (XXX-XXX-XXXX)" required
+                             maxlength="12" pattern="\d{3}-\d{3}-\d{4}" title="Please enter a phone number in the format XXX-XXX-XXXX">
+                        </td>
+                    </tr>
+
+                    <!-- Section 2: Contact Information -->
+                    <tr>
+                        <td>
+                            <label for="email">Email:</label>
+                            <input type="text" id="email" name="email" placeholder="Email Address" required>
+                            <label for="address">Address Line 1:</label>
+                            <input type="text" id="address" name="address" placeholder="Address Line 1" required>
+                            <label for="address2">Address Line 2:</label>
+                            <input type="text" id="address2" name="address2" placeholder="Address Line 2">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="city">City:</label>
+                            <input type="text" id="city" name="city" placeholder="City" required>
+                            <label for="state">State:</label>
+                            <select id="state" name="state" required>
+                                <option value="" disabled selected>Select State</option>
+                                <option value="CA">California</option>
+                                <option value="NY">New York</option>
+                                <option value="TX">Texas</option>
+                                <option value="FL">Florida</option>
+                                <option value="IL">Illinois</option>
+                                <option value="PA">Pennsylvania</option>
+                                <option value="OH">Ohio</option>
+                                <option value="MI">Michigan</option>
+                                <option value="GA">Georgia</option>
+                                <option value="NC">North Carolina</option>
+                                <option value="WA">Washington</option>
+                                <option value="NJ">New Jersey</option>
+                                <option value="VA">Virginia</option>
+                                <option value="MA">Massachusetts</option>
+                                <option value="IN">Indiana</option>
+                                <option value="AZ">Arizona</option>
+                                <option value="TN">Tennessee</option>
+                                <option value="MO">Missouri</option>
+                                <option value="MD">Maryland</option>
+                                <option value="WI">Wisconsin</option>
+                                <option value="CO">Colorado</option>
+                                <option value="MN">Minnesota</option>
+                                <option value="SC">South Carolina</option>
+                                <option value="AL">Alabama</option>
+                                <option value="LA">Louisiana</option>
+                                <option value="KY">Kentucky</option>
+                                <option value="OR">Oregon</option>
+                                <option value="OK">Oklahoma</option>
+                                <option value="CT">Connecticut</option>
+                                <option value="IA">Iowa</option>
+                                <option value="MS">Mississippi</option>
+                                <option value="AR">Arkansas</option>
+                                <option value="KS">Kansas</option>
+                                <option value="UT">Utah</option>
+                                <option value="NV">Nevada</option>
+                                <option value="NM">New Mexico</option>
+                                <option value="NE">Nebraska</option>
+                                <option value="WV">West Virginia</option>
+                                <option value="ID">Idaho</option>
+                                <option value="HI">Hawaii</option>
+                                <option value="ME">Maine</option>
+                                <option value="NH">New Hampshire</option>
+                                <option value="RI">Rhode Island</option>
+                                <option value="MT">Montana</option>
+                                <option value="DE">Delaware</option>
+                                <option value="SD">South Dakota</option>
+                                <option value="ND">North Dakota</option>
+                                <option value="AK">Alaska</option>
+                                <option value="VT">Vermont</option>
+                                <option value="WY">Wyoming</option>
+                                <option value="DC">District of Columbia</option>
+                                <option value="PR">Puerto Rico</option>
+                            </select>
+                            <label for="zip">Zip Code:</label>
+                            <input type="text" id="zip" name="zip" placeholder="Zip Code" required maxlength="5">
+                        </td>
+                    </tr>
+
+                    <!-- Section 3: Insurance Information -->
+                    <tr>
+                        <td>
+                            <label for="insurance">Insurance Provider:</label>
+                            <input type="text" id="insurance" name="insurance" placeholder="Insurance Provider" required>
+                            <label for="policy_number">Policy Number:</label>
+                            <input type="text" id="policy_number" name="policy_number" placeholder="Policy Number" required>
+                        </td>
+                    </tr>
+
+                    <!-- Section 4: Symptoms -->
+                    <tr>
+                        <td colspan="2" style="text-align:center;">
+                            <h3>Medical Information</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="description">Symptoms:</label><br>
+                            <textarea id="description" name="description" rows="4" cols="50" placeholder="Please use this space to describe your symptoms. For the most accurate diagnosis, please be as detailed as possible." required></textarea><br><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <label for="general_health">General Health Questions: (Check All That Apply)</label><br>
+                            <table style="width:100%; border:none;">
+                                <tr>
+                                    <td style="vertical-align:top; border:none;">
+                                        <input type="checkbox" id="diabetes" name="diabetes" value="diabetes">
+                                        <label for="diabetes">Diabetes</label><br>
+                                        <input type="checkbox" id="hypertension" name="hypertension" value="hypertension">
+                                        <label for="hypertension">Hypertension</label><br>
+                                        <input type="checkbox" id="heart_disease" name="heart_disease" value="heart_disease">
+                                        <label for="heart_disease">Heart Disease</label><br>
+                                        <input type="checkbox" id="asthma" name="asthma" value="asthma">
+                                        <label for="asthma">Asthma</label><br>
+                                        <input type="checkbox" id="chicken_pox" name="chicken_pox" value="chicken_pox">
+                                        <label for="chicken_pox">Chicken Pox</label><br>
+                                        
+                                    </td>
+                                    <td style="vertical-align:top; border:none;">
+                                        <input type="checkbox" id="mumps" name="mumps" value="mumps">
+                                        <label for="mumps">Mumps</label><br>
+                                        <input type="checkbox" id="small_pox" name="small_pox" value="small_pox">
+                                        <label for="small_pox">Small Pox</label><br>
+                                        <input type="checkbox" id="COVID-19" name="COVID-19" value="COVID-19">
+                                        <label for="COVID-19">COVID-19</label><br>
+                                        <input type="checkbox" id="Tetanus" name="Tetanus" value="Tetanus">
+                                        <label for="Tetanus">Tetanus</label><br>
+                                        <input type="checkbox" id="measles" name="measles" value="measles">
+                                        <label for="measles">Measles</label><br>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- Section 5: Slide Bar and Radio Buttons-->
+
+                    <tr>
+                        <td style="text-align: center;">
+                            <label for="pain_level">On a scale of 0-30, how would you rate the severity of your condition?</label><br>
+                            <input type="range" id="pain_level" name="pain_level" min="0" max="30" style="display: block; margin: 10px auto;">
+                            <div id="pain_level_value" style="margin-top: 8px; font-weight: bold;">15</div>
+                            <script>
+                                const painSlider = document.getElementById('pain_level');
+                                const painValue = document.getElementById('pain_level_value');
+                                // Set initial value
+                                painSlider.value = 15;
+                                painValue.textContent = painSlider.value;
+                                painSlider.addEventListener('input', function() {
+                                    painValue.textContent = this.value;
+                                });
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="age_group">Age Group:</label><br>
+                            <input type="radio" id="child" name="age_group" value="child">
+                            <label for="child">Child (0-12)</label>
+                            <input type="radio" id="adult" name="age_group" value="adult">
+                            <label for="adult">Adult (13-64)</label>
+                            <input type="radio" id="senior" name="age_group" value="senior">
+                            <label for="senior">Senior (65+)</label>
+                            <br><br>
+                            <input type="radio" id="vaccinated" name="vaccinated" value="yes">
+                            <label for="vaccinated">Have you been vaccinated?</label>
+                        </td>
+                    </tr>
+                </table>
+
+                <!--Section 6: UserID and Password Creation-->
+
+                <label for="user_id">User ID:</label>
+                <input type="text" id="user_id" name="user_id" required maxlength="30"><br><br>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required autocomplete="new-password"><br><br>
+
+                <label for="confirm_password">Confirm Password:</label>
+                <input type="password" id="confirm_password" name="confirm_password" required autocomplete="new-password"><br><br>
+
+                <!--Section 7: Reset Form and Submit Buttons-->
+
+                <input type="reset" value="Reset">
+                <input type="button" id="review_button" value="Review">
+                <input type="submit" value="Submit">
+
+
+            </form>
+
+            <script>
+                document.getElementById("review_button").addEventListener("click", function() {
+                    const form = document.querySelector("form");
+                    const formData = new FormData(form);
+                    let reviewContent = "<h3>Review Your Information</h3><ul style='list-style:none;padding:0;'>";
+
+                    // Helper for check/cross icons
+                    const check = '<span style="color:green;font-weight:bold;">&#10003;</span>';
+                    const cross = '<span style="color:red;font-weight:bold;">&#10007;</span>';
+
+                    // Error Messages for each field (standardized for consistency)
+                    const errorMessages = {
+                        first_name: "First Name cannot be empty.",
+                        middle_initial: "M.I. must be at most 1 character.",
+                        last_name: "Last Name cannot be empty.",
+                        dob: "Date of Birth must be in MM/DD/YYYY format, not in the future, and not older than 120 years.",
+                        ssn: "SSN must be in the format XXX-XX-XXXX.",
+                        phone: "Phone number must be in the format XXX-XXX-XXXX.",
+                        email: "Email must be a valid email address.",
+                        address: "Address Line 1 cannot be empty.",
+                        city: "City cannot be empty.",
+                        state: "State must be selected.",
+                        zip: "Zip Code must be a 5-digit number.",
+                        insurance: "Insurance Provider cannot be empty.",
+                        policy_number: "Policy Number cannot be empty.",
+                        description: "Symptoms description cannot be empty.",
+                        pain_level: "Pain Level must be selected.",
+                        age_group: "Age Group must be selected.",
+                        user_id: "User ID cannot be empty.",
+                        password: "Password cannot be empty and must not contain your first or last name.",
+                        confirm_password: "Confirm Password must match the Password."
+                    };
+
+
+                    // Validation rules for each field
+                    const validations = {
+                        first_name: v => v.trim().length > 0,
+                        middle_initial: v => v.length <= 1,
+                        last_name: v => v.trim().length > 0,
+                        dob: v => {
+                            if (!/^\d{2}\/\d{2}\/\d{4}$/.test(v)) return false;
+                            const [mm, dd, yyyy] = v.split('/').map(Number);
+                            const dobDate = new Date(yyyy, mm - 1, dd);
+                            const now = new Date();
+                            const minDate = new Date(now.getFullYear() - 120, now.getMonth(), now.getDate());
+                            // Not in the future, not older than 120 years, and valid date
+                            return dobDate <= now && dobDate >= minDate && dobDate.getFullYear() === yyyy && dobDate.getMonth() === mm - 1 && dobDate.getDate() === dd;
+                        },
+                        ssn: v => /^\d{3}-\d{2}-\d{4}$/.test(v),
+                        phone: v => /^\d{3}-\d{3}-\d{4}$/.test(v),
+                        email: v => /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v),
+                        address: v => v.trim().length > 0,
+                        address2: v => true, // optional
+                        city: v => v.trim().length > 0,
+                        state: v => v.trim().length > 0,
+                        zip: v => /^\d{5}$/.test(v),
+                        insurance: v => v.trim().length > 0,
+                        policy_number: v => v.trim().length > 0,
+                        description: v => v.trim().length > 0,
+                        pain_level: v => v !== '',
+                        age_group: v => v !== '',
+                        vaccinated: v => true, // optional
+                        user_id: v => v.trim().length > 0,
+                        password: v => {
+                            const first = (formData.get('first_name') || '').toLowerCase();
+                            const last = (formData.get('last_name') || '').toLowerCase();
+                            const pass = (v || '').toLowerCase();
+                            return pass.length > 0 && (!first || !pass.includes(first)) && (!last || !pass.includes(last));
+                        },
+                        confirm_password: v => v.trim().length > 0 && v === form.elements['password'].value
+                    };
+
+                    // List of all fields to check (in order)
+                    const fields = [
+                        {name: 'first_name', label: 'First Name'},
+                        {name: 'middle_initial', label: 'M.I.'},
+                        {name: 'last_name', label: 'Last Name'},
+                        {name: 'dob', label: 'Date of Birth'},
+                        {name: 'ssn', label: 'SSN'},
+                        {name: 'phone', label: 'Phone'},
+                        {name: 'email', label: 'Email'},
+                        {name: 'address', label: 'Address Line 1'},
+                        {name: 'address2', label: 'Address Line 2'},
+                        {name: 'city', label: 'City'},
+                        {name: 'state', label: 'State'},
+                        {name: 'zip', label: 'Zip Code'},
+                        {name: 'insurance', label: 'Insurance Provider'},
+                        {name: 'policy_number', label: 'Policy Number'},
+                        {name: 'description', label: 'Symptoms'},
+                        {name: 'pain_level', label: 'Pain Level'},
+                        {name: 'age_group', label: 'Age Group'},
+                        {name: 'vaccinated', label: 'Vaccinated'},
+                        {name: 'user_id', label: 'User ID'},
+                        {name: 'password', label: 'Password'},
+                        {name: 'confirm_password', label: 'Confirm Password'}
+                    ];
+
+                    for (const field of fields) {
+                        let value = formData.get(field.name) || '';
+                        let valid = validations[field.name] ? validations[field.name](value) : true;
+                        if (valid) {
+                            reviewContent += `<li>${field.label}: ${check}</li>`;
+                        } else {
+                            const msg = errorMessages[field.name] || 'Invalid input.';
+                            reviewContent += `<li>${field.label}: ${cross} <span style='color:red;'>${msg}</span></li>`;
+                        }
+                    }
+                    reviewContent += "</ul>";
+
+                    // Display the review content in a modal
+                    const modalOverlay = document.createElement("div");
+                    modalOverlay.style.position = "fixed";
+                    modalOverlay.style.top = "0";
+                    modalOverlay.style.left = "0";
+                    modalOverlay.style.width = "100vw";
+                    modalOverlay.style.height = "100vh";
+                    modalOverlay.style.background = "rgba(0,0,0,0.5)";
+                    modalOverlay.style.display = "flex";
+                    modalOverlay.style.alignItems = "center";
+                    modalOverlay.style.justifyContent = "center";
+
+                    // Create Modal Box
+                    const modalBox = document.createElement("div");
+                    modalBox.style.background = "#fff";
+                    modalBox.style.color = "#000"; // Set default text color to black
+                    modalBox.style.padding = "24px";
+                    modalBox.style.borderRadius = "8px";
+                    modalBox.style.maxWidth = "90vw";
+                    modalBox.style.maxHeight = "80vh";
+                    modalBox.style.overflowY = "auto";
+                    modalBox.innerHTML = reviewContent;
+
+
+                    // Dismiss Button on Modal
+                    const dismissButton = document.createElement("button");
+                    dismissButton.textContent = "Close";
+                    dismissButton.style.marginTop = "16px";
+                    dismissButton.addEventListener("click", () => {
+                        document.body.removeChild(modalOverlay);
+                    });
+                    modalBox.appendChild(dismissButton);
+                    modalOverlay.appendChild(modalBox);
+                    document.body.appendChild(modalOverlay);
+                });
+
+            </script>
+
+            <!--Section 8: Footer-->
+
+            <div id="footer">
+                <p>Thank you for choosing the Houston Health Center. We look forward to assisting you with your healthcare needs!</p>
+                <p>Contact us at (555) 123-4567 or visit our website at www.houstonhealthcenter.com</p>
+                <a href="https://www.instagram.com/" target="_blank" style="margin: 0 10px;">Instagram</a>
+                    <a href="https://www.facebook.com/" target="_blank" style="margin: 0 10px;">Facebook</a>
+                    <a href="https://x.com/" target="_blank" style="margin: 0 10px;">X</a>
+            </div>
+
+
+
+        </body>
+</html>
