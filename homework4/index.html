@@ -9,11 +9,18 @@
         <!--Page Header-->
         <div id="header">
             <img id="logo" src="medsymbolnobg2.png" alt="Houston Health Center Logo">
-            <h1 id="h1">Houston Health Center</h1>
-            <p>Welcome to the Houston Health Center!</p>
-            <p id="welcome_msg" class="date-line"></p>
+            <div id="header-center">
+                <h1 id="h1">Houston Health Center</h1>
+            </div>
+            <div style="display:flex; align-items:center; gap:8px;">
+                <p class="date-line">Date: <span id="current_date"></span></p>
+            </div>
+        </div>
+
+        <!-- Welcome banner (below fixed header) -->
+        <div id="welcome_banner">
+            <p id="welcome_msg"></p>
             <button type="button" id="not_you_btn" style="display:none;">Not <span id="not_you_name"></span>? Click here to restart the form as a new user.</button>
-            <p class="date-line">Date: <span id="current_date"></span></p>
         </div>
 
         <div id="patient_info_header">
