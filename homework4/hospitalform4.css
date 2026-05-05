@@ -1,5 +1,113 @@
+/* ── Body ────────────────────────────────────────────────────────────────── */
+body {
+    background: #111;
+    color: #fff;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    padding-top: 80px;
+    padding-bottom: 60px;
+}
 
-/* ── FAQ iframe section ────────────────────────────────────────────────────── */
+/* ── Fixed Header ────────────────────────────────────────────────────────── */
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #111;
+    z-index: 1000;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.5);
+}
+
+/* Three equal columns: left / center / right */
+#header-left {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+
+#header-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#header-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    padding-right: 20px;
+    gap: 2px;
+    min-width: 0;
+}
+
+#logo {
+    width: 36px;
+    height: auto;
+    display: block;
+}
+
+#h1 {
+    color: #fff;
+    font-size: 1.15rem;
+    margin: 0;
+    white-space: nowrap;
+}
+
+#welcome_msg {
+    color: #ccc;
+    font-size: 0.78rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+.date-line {
+    color: #aaa;
+    font-size: 0.75rem;
+    margin: 0;
+    white-space: nowrap;
+}
+
+#not_you_btn {
+    background: transparent;
+    color: #ff9999;
+    border: 1px solid #ff9999;
+    border-radius: 20px;
+    padding: 1px 8px;
+    font-size: 0.68rem;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    white-space: nowrap;
+}
+
+#not_you_btn:hover {
+    background: #ff9999;
+    color: #111;
+}
+
+/* ── Patient Info Header ──────────────────────────────────────────────────── */
+#patient_info_header {
+    background: #b30000;
+    color: #fff;
+    padding: 18px 0;
+    border-radius: 12px;
+    margin: 0 auto 30px auto;
+    width: 60%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+/* ── FAQ iframe section ───────────────────────────────────────────────────── */
 #faq_section {
     width: 60%;
     margin: 20px auto 0 auto;
@@ -30,119 +138,7 @@
     background: #fff;
 }
 
-@media (max-width: 900px) {
-    #faq_section {
-        width: 95%;
-        padding: 14px;
-    }
-}
-
-body {
-    background: #111;
-    color: #fff;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    margin: 0;
-    min-height: 100vh;
-    padding-top: 100px;
-    padding-bottom: 60px;
-}
-
-#header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: #111;
-    z-index: 1000;
-    padding: 0 24px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.5);
-}
-
-#logo {
-    width: 36px;
-    height: auto;
-    display: block;
-    flex-shrink: 0;
-}
-
-#header-center {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    pointer-events: none;
-}
-
-#h1 {
-    color: #fff;
-    font-size: 1.15rem;
-    margin: 0;
-    white-space: nowrap;
-}
-
-#header > p,
-#header > .date-line {
-    display: none;
-}
-
-.date-line {
-    color: #ccc;
-    font-size: 0.8rem;
-    margin: 0;
-    white-space: nowrap;
-    flex-shrink: 0;
-}
-
-#welcome_msg {
-    display: none !important;
-}
-
-#welcome_banner {
-    text-align: center;
-    padding: 8px 16px;
-    background: #1a1a1a;
-    border-bottom: 1px solid #333;
-}
-
-#welcome_banner #welcome_msg {
-    display: inline !important;
-    color: #ccc;
-    font-size: 0.9rem;
-    margin: 0;
-}
-
-#welcome_banner #not_you_btn {
-    background: transparent;
-    color: #ff9999;
-    border: 1px solid #ff9999;
-    border-radius: 20px;
-    padding: 2px 10px;
-    font-size: 0.72rem;
-    cursor: pointer;
-    transition: background 0.2s, color 0.2s;
-    margin-left: 10px;
-}
-
-#welcome_banner #not_you_btn:hover {
-    background: #ff9999;
-    color: #111;
-}
-
-#patient_info_header {
-    background: #b30000;
-    color: #fff;
-    padding: 18px 0;
-    border-radius: 12px;
-    margin: 0 auto 30px auto;
-    width: 60%;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-    text-align: center;
-}
-
+/* ── Form Table ───────────────────────────────────────────────────────────── */
 .form-table {
     background: #222;
     color: #fff;
@@ -155,12 +151,8 @@ body {
     border-spacing: 0 18px;
 }
 
-.form-table h3 {
-    color: #fff;
-    margin-bottom: 18px;
-}
+.form-table h3 { color: #fff; margin-bottom: 18px; }
 
-/* Reduce spacing between labels and input boxes for inline fields */
 .form-table label {
     margin-right: 4px;
     margin-bottom: 8px;
@@ -189,9 +181,7 @@ body {
 .form-table input[type="text"]:focus,
 .form-table input[type="password"]:focus,
 .form-table select:focus,
-.form-table textarea:focus {
-    border-color: #b30000;
-}
+.form-table textarea:focus { border-color: #b30000; }
 
 .form-table input[type="range"] {
     width: 60%;
@@ -200,12 +190,8 @@ body {
 }
 
 .form-table input[type="checkbox"],
-.form-table input[type="radio"] {
-    accent-color: #b30000;
-    margin-right: 6px;
-}
+.form-table input[type="radio"] { accent-color: #b30000; margin-right: 6px; }
 
-/* Center Symptoms section */
 #description,
 .form-table label[for="description"] {
     display: block;
@@ -214,25 +200,18 @@ body {
     text-align: center;
 }
 
-/* Center radio buttons */
-.form-table input[type="radio"] {
-    margin-left: 8px;
-    margin-right: 6px;
-}
+.form-table input[type="radio"] { margin-left: 8px; margin-right: 6px; }
+
 .form-table label[for="age_group"],
 .form-table input[type="radio"],
 .form-table label[for="child"],
 .form-table label[for="adult"],
 .form-table label[for="senior"],
-.form-table label[for="vaccinated"] {
-    display: inline-block;
-    text-align: center;
-}
-.form-table tr:last-of-type td {
-    text-align: center;
-}
+.form-table label[for="vaccinated"] { display: inline-block; text-align: center; }
 
-/* UserID and Password section styling */
+.form-table tr:last-of-type td { text-align: center; }
+
+/* ── Inputs outside the table ────────────────────────────────────────────── */
 input[type="text"],
 input[type="password"] {
     background: #333;
@@ -244,19 +223,15 @@ input[type="password"] {
     outline: none;
     transition: border-color 0.2s;
 }
-input[type="text"]:focus,
-input[type="password"]:focus {
-    border-color: #b30000;
-}
 
-/* Center Reset and Submit buttons */
-.form-table + input[type="reset"],
-.form-table + input[type="submit"] {
-    display: block;
-    margin: 18px auto 0 auto;
-}
+input[type="text"]:focus,
+input[type="password"]:focus { border-color: #b30000; }
+
+/* ── Buttons ─────────────────────────────────────────────────────────────── */
 input[type="reset"],
-input[type="submit"], input[type="button"], #review_button {
+input[type="submit"],
+input[type="button"],
+#review_button {
     background: #b30000;
     color: #fff;
     border: none;
@@ -268,13 +243,18 @@ input[type="submit"], input[type="button"], #review_button {
     cursor: pointer;
     transition: background 0.2s;
 }
+
 input[type="reset"]:hover,
 input[type="submit"]:hover,
-input[type="button"]:hover, #review_button:hover {
-    background: #ff3333;
-}
+input[type="button"]:hover,
+#review_button:hover { background: #ff3333; }
 
+/* ── Remember Me ─────────────────────────────────────────────────────────── */
+#remember_me { accent-color: #ff4444; margin-right: 6px; cursor: pointer; }
 
+label:has(#remember_me) { color: #ccc; font-size: 0.92rem; cursor: pointer; }
+
+/* ── Fixed Footer ────────────────────────────────────────────────────────── */
 #footer {
     text-align: center;
     color: #aaa;
@@ -289,56 +269,8 @@ input[type="button"]:hover, #review_button:hover {
     z-index: 1000;
 }
 
-#footer p {
-    margin: 2px 0;
-}
-
-#footer a {
-    color: #aaa;
-    font-size: 0.75rem;
-}
-
-.date-line {
-    color: #fff;
-    font-size: 1.1rem;
-    margin-bottom: 12px;
-}
-
-#not_you_btn {
-    background: transparent;
-    color: #ff9999;
-    border: 1px solid #ff9999;
-    border-radius: 20px;
-    padding: 4px 14px;
-    font-size: 0.82rem;
-    cursor: pointer;
-    margin-bottom: 8px;
-    transition: background 0.2s, color 0.2s;
-}
-
-#not_you_btn:hover {
-    background: #ff9999;
-    color: #111;
-}
-
-#remember_me {
-    accent-color: #ff4444;
-    margin-right: 6px;
-    cursor: pointer;
-}
-
-label:has(#remember_me) {
-    color: #ccc;
-    font-size: 0.92rem;
-    cursor: pointer;
-}
-
-@media (max-width: 900px) {
-    .form-table, #patient_info_header {
-        width: 95%;
-        padding: 16px;
-    }
-}
+#footer p { margin: 2px 0; }
+#footer a { color: #aaa; font-size: 0.75rem; }
 
 /* ── Returning User Confirmation Modal ───────────────────────────────────── */
 #returning_modal {
@@ -362,11 +294,7 @@ label:has(#remember_me) {
     width: 90%;
 }
 
-#returning_modal_box p {
-    color: #fff;
-    font-size: 1.1rem;
-    margin-bottom: 24px;
-}
+#returning_modal_box p { color: #fff; font-size: 1.1rem; margin-bottom: 24px; }
 
 #returning_yes, #returning_no {
     border: none;
@@ -378,10 +306,10 @@ label:has(#remember_me) {
     transition: background 0.2s;
 }
 
-#returning_yes  { background: #b30000; color: #fff; }
-#returning_yes:hover  { background: #e60000; }
-#returning_no   { background: #444; color: #fff; }
-#returning_no:hover   { background: #666; }
+#returning_yes       { background: #b30000; color: #fff; }
+#returning_yes:hover { background: #e60000; }
+#returning_no        { background: #444;    color: #fff; }
+#returning_no:hover  { background: #666; }
 
 /* ── Validation error styles ─────────────────────────────────────────────── */
 input.field-error,
@@ -399,4 +327,10 @@ textarea.field-error {
     font-weight: 500;
     margin-left: 4px;
     vertical-align: middle;
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+    .form-table, #patient_info_header, #faq_section { width: 95%; padding: 16px; }
+    #h1 { font-size: 0.95rem; }
 }
